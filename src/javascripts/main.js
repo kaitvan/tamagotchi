@@ -1,10 +1,10 @@
-import quadrantData from '../data/quadrantData';
-import displayQuadrants from './components/displayQuadrants';
+import Data from '../data/quadrantData';
+import Quadrants from './components/displayQuadrants';
 
 import '../styles/main.scss';
 
 const init = () => {
-  displayQuadrants.displayQuadrants(quadrantData.getQuadrantData());
+  Quadrants.displayQuadrants(Data.getQuadrantData());
 };
 
 init();

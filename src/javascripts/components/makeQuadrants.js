@@ -5,8 +5,10 @@ const makeQuadrants = (obj) => {
       <button id="">${obj.button1}</button>
       <button id="">${obj.button2}</button>
     </div>
-  <h4>${obj.progressBarLabel}</h4>
-  <progress id="" max="100" value="${obj.barValue}"></progress>`;
+    <div class="score-container">
+      <progress id="" max="100" value="${obj.barValue}"></progress>
+      <h5>${obj.progressBarLabel}: ${obj.barValue}</h5>
+    </div>`;
 
   return domString;
 };

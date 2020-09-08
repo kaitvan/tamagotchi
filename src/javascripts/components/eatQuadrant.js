@@ -1,5 +1,7 @@
 let fullnessScore = 100;
 
+const getFullnessScore = () => fullnessScore;
+
 const healthyButtonClicked = () => {
   fullnessScore += 10;
   if (fullnessScore > 100) {
@@ -20,14 +22,14 @@ const eatButtonEvents = () => {
   $('#btn-healthy').click(() => {
     $('#fullnessScore').html('');
     $('#fullnessScore').html(`
-    <div class="score">Fullness Score: ${healthyButtonClicked()}</div>
-    <progress id="eat-progress" class="progress" value="${fullnessScore}" max="100"></progress>`);
+    <div class="score">Fullness Score: ${healthyButtonClicked()}%</div>
+    <progress id="eat-progress" class="quad-progress" value="${fullnessScore}" max="100"></progress>`);
   });
   $('#btn-unhealthy').click(() => {
     $('#fullnessScore').html('');
     $('#fullnessScore').html(`
-    <div class="score">Fullness Score: ${unhealthyButtonClicked()}</div>
-    <progress id="eat-progress" class="progress" value="${fullnessScore}" max="100"></progress>`);
+    <div class="score">Fullness Score: ${unhealthyButtonClicked()}%</div>
+    <progress id="eat-progress" class="quad-progress" value="${fullnessScore}" max="100"></progress>`);
   });
 };
 
@@ -40,8 +42,8 @@ const displayEatQuadrant = () => {
         <button id="btn-unhealthy">Eat Unhealthy Food</button>
       </div>
       <div id="fullnessScore">
-        <div class="score">Fullness Score: ${fullnessScore}</div>
-        <progress id="eat-progress" class="progress" value="${fullnessScore}" max="100"></progress>
+        <div class="score">Fullness Score: ${fullnessScore}%</div>
+        <progress id="eat-progress" class="quad-progress" value="${fullnessScore}" max="100"></progress>
       </div>
     </div>
   `;
@@ -49,4 +51,4 @@ const displayEatQuadrant = () => {
   eatButtonEvents();
 };
 
-export default { displayEatQuadrant };
+export default { displayEatQuadrant, getFullnessScore };

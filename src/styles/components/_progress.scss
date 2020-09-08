@@ -5,10 +5,11 @@ progress {
   }
 
   progress::-webkit-progress-bar {
-    background-color: white;
+    background-color: #BDEFEF;
     border-radius: 7px;
   }
 
   progress::-webkit-progress-value {
-    background-color: #FFC870;
+    background-color: #1B7474;
+    border-radius: 7px;
   }

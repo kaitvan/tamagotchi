@@ -23,4 +23,4 @@ The user can increase or descrease the Tamagotchi's overall health with four dif
 [View Live Site](https://tamagotchi-kaitvan.netlify.app/)
 
 ## Demo
-![Tamagotchi 2.0 Demo](/src/assets/tamagotchi-app-giphy)
+![Tamagotchi 2.0 Demo](tamagotchi-app-giphy.gif)

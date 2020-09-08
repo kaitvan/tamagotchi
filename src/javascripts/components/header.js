@@ -2,6 +2,7 @@ import Eat from './eatQuadrant';
 import Play from './playQuadrant';
 import Fight from './fightQuadrant';
 import Sleep from './sleepQuadrant';
+import Tamagotchi from '../../assets/images/tamagotchi.gif';
 
 const getOverallScore = () => Math.round((Eat.getFullnessScore() + Fight.getStrengthScore() + Play.getFunScore() + Sleep.getEnergyScore()) / 4);
 
@@ -11,7 +12,7 @@ const displayHeader = () => {
     <h1>Tamagotchi 2.0</h1>
   </div>
   <div id="img-pet">
-    <img src="/src/assets/images/tamagotchi.gif" alt="Tamagotchi">
+    <img src=${Tamagotchi} alt="Tamagotchi">
   </div>
   <div id="overallScore">
     <div class="score">Overall Health Score: ${getOverallScore()}%</div>

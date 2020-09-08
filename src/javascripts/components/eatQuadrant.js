@@ -19,11 +19,15 @@ const unhealthyButtonClicked = () => {
 const eatButtonEvents = () => {
   $('#btn-healthy').click(() => {
     $('#fullnessScore').html('');
-    $('#fullnessScore').html(`Fullness Score: ${healthyButtonClicked()}`);
+    $('#fullnessScore').html(`
+    <div class="score">Fullness Score: ${healthyButtonClicked()}</div>
+    <progress id="eat-progress" class="progress" value="${fullnessScore}" max="100"></progress>`);
   });
   $('#btn-unhealthy').click(() => {
     $('#fullnessScore').html('');
-    $('#fullnessScore').html(`Fullness Score: ${unhealthyButtonClicked()}`);
+    $('#fullnessScore').html(`
+    <div class="score">Fullness Score: ${unhealthyButtonClicked()}</div>
+    <progress id="eat-progress" class="progress" value="${fullnessScore}" max="100"></progress>`);
   });
 };
 
@@ -35,7 +39,10 @@ const displayEatQuadrant = () => {
         <button id="btn-healthy">Eat Healthy Food</button>
         <button id="btn-unhealthy">Eat Unhealthy Food</button>
       </div>
-      <div id="fullnessScore">Fullness Score: ${fullnessScore}</div>
+      <div id="fullnessScore">
+        <div class="score">Fullness Score: ${fullnessScore}</div>
+        <progress id="eat-progress" class="progress" value="${fullnessScore}" max="100"></progress>
+      </div>
     </div>
   `;
   $('#eat').html(domString);

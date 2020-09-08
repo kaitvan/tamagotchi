@@ -1,0 +1,8 @@
+@import './variables';
+
+$quadrant-list: (
+    (eat, $eat),
+    (play, $play),
+    (fight, $fight),
+    (sleep, $sleep)
+)

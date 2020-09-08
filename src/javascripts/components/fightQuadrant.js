@@ -19,11 +19,15 @@ const commitViolenceButtonClicked = () => {
 const fightButtonEvents = () => {
   $('#btn-run-away').click(() => {
     $('#strengthScore').html('');
-    $('#strengthScore').html(`Strength Score: ${runAwayButtonClicked()}`);
+    $('#strengthScore').html(`
+    <div class="score">Strength Score: ${runAwayButtonClicked()}</div>
+    <progress id="fight-progress" class="progress" value="${strengthScore}" max="100"></progress>`);
   });
   $('#btn-commit-violence').click(() => {
     $('#strengthScore').html('');
-    $('#strengthScore').html(`Strength Score: ${commitViolenceButtonClicked()}`);
+    $('#strengthScore').html(`
+    <div class="score">Strength Score: ${commitViolenceButtonClicked()}</div>
+    <progress id="fight-progress" class="progress" value="${strengthScore}" max="100"></progress>`);
   });
 };
 
@@ -35,7 +39,10 @@ const displayFightQuadrant = () => {
         <button id="btn-run-away">Run Away</button>
         <button id="btn-commit-violence">Commit Violence</button>
       </div>
-      <div id="strengthScore">Strength Score: ${strengthScore}</div>
+      <div id="strengthScore">
+        <div class="score">Strength Score: ${strengthScore}</div>
+        <progress id="fight-progress" class="progress" value="${strengthScore}" max="100"></progress>
+      </div>
     </div>
   `;
   $('#fight').html(domString);

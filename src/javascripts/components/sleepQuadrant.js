@@ -19,11 +19,15 @@ const deepSleepButtonClicked = () => {
 const sleepButtonEvents = () => {
   $('#btn-take-nap').click(() => {
     $('#energyScore').html('');
-    $('#energyScore').html(`Energy Score: ${takeNapButtonClicked()}`);
+    $('#energyScore').html(`
+    <div class="score">Energy Score: ${takeNapButtonClicked()}</div>
+    <progress id="sleep-progress" class="progress" value="${energyScore}" max="100"></progress>`);
   });
   $('#btn-deep-sleep').click(() => {
     $('#energyScore').html('');
-    $('#energyScore').html(`Energy Score: ${deepSleepButtonClicked()}`);
+    $('#energyScore').html(`
+    <div class="score">Energy Score: ${deepSleepButtonClicked()}</div>
+    <progress id="sleep-progress" class="progress" value="${energyScore}" max="100"></progress>`);
   });
 };
 
@@ -35,7 +39,10 @@ const displaySleepQuadrant = () => {
         <button id="btn-take-nap">Take a Nap</button>
         <button id="btn-deep-sleep">Deep Sleep</button>
       </div>
-      <div id="energyScore">Energy Score: ${energyScore}</div>
+      <div id="energyScore">
+        <div class="score">Energy Score: ${energyScore}</div>
+        <progress id="sleep-progress" class="progress" value="${energyScore}" max="100"></progress>
+      </div>
     </div>
   `;
   $('#sleep').html(domString);

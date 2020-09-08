@@ -1,5 +1,7 @@
 let energyScore = 50;
 
+const getEnergyScore = () => energyScore;
+
 const takeNapButtonClicked = () => {
   energyScore += 50;
   if (energyScore > 100) {
@@ -20,14 +22,14 @@ const sleepButtonEvents = () => {
   $('#btn-take-nap').click(() => {
     $('#energyScore').html('');
     $('#energyScore').html(`
-    <div class="score">Energy Score: ${takeNapButtonClicked()}</div>
-    <progress id="sleep-progress" class="progress" value="${energyScore}" max="100"></progress>`);
+    <div class="score">Energy Score: ${takeNapButtonClicked()}%</div>
+    <progress id="sleep-progress" class="quad-progress" value="${energyScore}" max="100"></progress>`);
   });
   $('#btn-deep-sleep').click(() => {
     $('#energyScore').html('');
     $('#energyScore').html(`
-    <div class="score">Energy Score: ${deepSleepButtonClicked()}</div>
-    <progress id="sleep-progress" class="progress" value="${energyScore}" max="100"></progress>`);
+    <div class="score">Energy Score: ${deepSleepButtonClicked()}%</div>
+    <progress id="sleep-progress" class="quad-progress" value="${energyScore}" max="100"></progress>`);
   });
 };
 
@@ -40,8 +42,8 @@ const displaySleepQuadrant = () => {
         <button id="btn-deep-sleep">Deep Sleep</button>
       </div>
       <div id="energyScore">
-        <div class="score">Energy Score: ${energyScore}</div>
-        <progress id="sleep-progress" class="progress" value="${energyScore}" max="100"></progress>
+        <div class="score">Energy Score: ${energyScore}%</div>
+        <progress id="sleep-progress" class="quad-progress" value="${energyScore}" max="100"></progress>
       </div>
     </div>
   `;
@@ -49,4 +51,4 @@ const displaySleepQuadrant = () => {
   sleepButtonEvents();
 };
 
-export default { displaySleepQuadrant };
+export default { displaySleepQuadrant, getEnergyScore };

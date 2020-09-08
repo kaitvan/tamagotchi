@@ -1,5 +1,7 @@
 let funScore = 50;
 
+const getFunScore = () => funScore;
+
 const superFunButtonClicked = () => {
   funScore += 50;
   if (funScore > 100) {
@@ -20,13 +22,13 @@ const playButtonEvents = () => {
   $('#btn-super-fun').click(() => {
     $('#funScore').html('');
     $('#funScore').html(`
-    <div class="score">Fun Score: ${superFunButtonClicked()}</div>
-    <progress id="play-progress" class="progress" value="${funScore}" max="100"></progress>`);
+    <div class="score">Fun Score: ${superFunButtonClicked()}%</div>
+    <progress id="play-progress" class="quad-progress" value="${funScore}" max="100"></progress>`);
   });
   $('#btn-slightly-fun').click(() => {
     $('#funScore').html('');
-    $('#funScore').html(`<div class="score">Fun Score: ${slightlyFunButtonClicked()}</div>
-    <progress id="play-progress" class="progress" value="${funScore}" max="100"></progress>`);
+    $('#funScore').html(`<div class="score">Fun Score: ${slightlyFunButtonClicked()}%</div>
+    <progress id="play-progress" class="quad-progress" value="${funScore}" max="100"></progress>`);
   });
 };
 
@@ -39,8 +41,8 @@ const displayPlayQuadrant = () => {
         <button id="btn-slightly-fun">Slightly Fun Activity</button>
       </div>
       <div id="funScore">
-        <div class="score">Fun Score: ${funScore}</div>
-        <progress id="play-progress" class="progress" value="${funScore}" max="100"></progress>
+        <div class="score">Fun Score: ${funScore}%</div>
+        <progress id="play-progress" class="quad-progress" value="${funScore}" max="100"></progress>
       </div>
     </div>
   `;
@@ -48,4 +50,4 @@ const displayPlayQuadrant = () => {
   playButtonEvents();
 };
 
-export default { displayPlayQuadrant };
+export default { displayPlayQuadrant, getFunScore };

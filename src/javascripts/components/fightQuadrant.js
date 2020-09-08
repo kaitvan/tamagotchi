@@ -1,5 +1,7 @@
 let strengthScore = 100;
 
+const getStrengthScore = () => strengthScore;
+
 const runAwayButtonClicked = () => {
   strengthScore += 1;
   if (strengthScore > 100) {
@@ -20,14 +22,14 @@ const fightButtonEvents = () => {
   $('#btn-run-away').click(() => {
     $('#strengthScore').html('');
     $('#strengthScore').html(`
-    <div class="score">Strength Score: ${runAwayButtonClicked()}</div>
-    <progress id="fight-progress" class="progress" value="${strengthScore}" max="100"></progress>`);
+    <div class="score">Strength Score: ${runAwayButtonClicked()}%</div>
+    <progress id="fight-progress" class="quad-progress" value="${strengthScore}" max="100"></progress>`);
   });
   $('#btn-commit-violence').click(() => {
     $('#strengthScore').html('');
     $('#strengthScore').html(`
-    <div class="score">Strength Score: ${commitViolenceButtonClicked()}</div>
-    <progress id="fight-progress" class="progress" value="${strengthScore}" max="100"></progress>`);
+    <div class="score">Strength Score: ${commitViolenceButtonClicked()}%</div>
+    <progress id="fight-progress" class="quad-progress" value="${strengthScore}" max="100"></progress>`);
   });
 };
 
@@ -40,8 +42,8 @@ const displayFightQuadrant = () => {
         <button id="btn-commit-violence">Commit Violence</button>
       </div>
       <div id="strengthScore">
-        <div class="score">Strength Score: ${strengthScore}</div>
-        <progress id="fight-progress" class="progress" value="${strengthScore}" max="100"></progress>
+        <div class="score">Strength Score: ${strengthScore}%</div>
+        <progress id="fight-progress" class="quad-progress" value="${strengthScore}" max="100"></progress>
       </div>
     </div>
   `;
@@ -49,4 +51,4 @@ const displayFightQuadrant = () => {
   fightButtonEvents();
 };
 
-export default { displayFightQuadrant };
+export default { displayFightQuadrant, getStrengthScore };

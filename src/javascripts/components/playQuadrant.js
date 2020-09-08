@@ -19,11 +19,14 @@ const slightlyFunButtonClicked = () => {
 const playButtonEvents = () => {
   $('#btn-super-fun').click(() => {
     $('#funScore').html('');
-    $('#funScore').html(`Fun Score: ${superFunButtonClicked()}`);
+    $('#funScore').html(`
+    <div class="score">Fun Score: ${superFunButtonClicked()}</div>
+    <progress id="play-progress" class="progress" value="${funScore}" max="100"></progress>`);
   });
   $('#btn-slightly-fun').click(() => {
     $('#funScore').html('');
-    $('#funScore').html(`Fun Score: ${slightlyFunButtonClicked()}`);
+    $('#funScore').html(`<div class="score">Fun Score: ${slightlyFunButtonClicked()}</div>
+    <progress id="play-progress" class="progress" value="${funScore}" max="100"></progress>`);
   });
 };
 
@@ -35,7 +38,10 @@ const displayPlayQuadrant = () => {
         <button id="btn-super-fun">Super Fun Activity</button>
         <button id="btn-slightly-fun">Slightly Fun Activity</button>
       </div>
-      <div id="funScore">Fun Score: ${funScore}</div>
+      <div id="funScore">
+        <div class="score">Fun Score: ${funScore}</div>
+        <progress id="play-progress" class="progress" value="${funScore}" max="100"></progress>
+      </div>
     </div>
   `;
   $('#play').html(domString);

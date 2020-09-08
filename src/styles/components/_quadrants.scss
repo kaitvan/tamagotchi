@@ -1,0 +1,17 @@
+%quadrant {
+    margin: 10px;
+    border-radius: 25px;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+@each $div, $div-color in $quadrant-list {
+    .#{$div}-div {
+        @extend %quadrant;
+        background-color: #{$div-color};
+    }
+    .score {
+        padding: 10px;
+    }
+}
